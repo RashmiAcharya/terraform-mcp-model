@@ -1,98 +1,67 @@
-# terraform-mcp-model
-
-
+terraform-mcp-model
 TerraAI: gRPC-Based Terraform MCP Server
 Enhancing DevOps with LLM-Powered Intelligence
-VISION
-TerraAI – An MCP-based Terraform server that addresses multiple DevOps challenges through:
-CORE CAPABILITIES
-
-Frontier LLM-Powered Chatbot
-
-Natural language processing for infrastructure tasks
-Contextual understanding of DevOps requirements
-
-
-Intelligent Data Processing
-
-Accurate information gathering by scraping data sources
-Enhanced intelligence and summarization using LLM agents:
-
+**Vision**
+TerraAI is an MCP-based Terraform server designed to address key DevOps challenges by combining Terraform capabilities with LLM-driven intelligence.
+Core Capabilities
+1. LLM-Powered Chat Interface
+Natural language interaction for infrastructure tasks
+Context-aware understanding of DevOps workflows
+2. Intelligent Data Processing
+Automated data collection from relevant sources
+**Enhanced summarization and insights using LLMs:**
 Granite
-LLAMA
+LLaMA
 Anthropic Claude
 Google Gemini
-
-
-
-
-Integration with Powerful Terraform Tools
-
+3. Integration with Terraform Ecosystem
 Migration Assistant Provider
 Terraform CLI
 Terraform Stacks
 Additional advanced Terraform tooling
-
-
-Multi-Cloud LLM Terraform Provider
-
+4. Multi-Cloud LLM Terraform Provider
 Unified interface across cloud platforms
 Intelligent resource optimization
 Automated configuration recommendations
-
-
-
-KEY BENEFITS
-
+Key Benefits
 Simplified infrastructure management
 Reduced configuration errors
-Accelerated deployment workflows
-Enhanced cross-team collaboration
+Faster deployment workflows
+Improved cross-team collaboration
 
-ReadMe
-🔗 What’s Already Built
-✅ gRPC based MCP server for scraping and serving TFE release data
-✅ LLaMA-based local integration for summarization with API endpoint/ask-llama  
-✅ gRPC client which can present the data returned from gRPC server 
+**What’s Already Built**
+✅ gRPC-based MCP server for scraping and serving TFE release data
+✅ Local LLaMA integration for summarization (/ask-llama API)
+✅ gRPC client to consume and display server responses
 ✅ Protobuf-defined data model (MCP-style)
-✅ Basic API tested and functional 
-Added this-
-✅ Integration with Hugging Face API for Text Summarization
-
-🛠️ What We Plan to Build
-REST endpoint /ask-llama or /summarize/:version
-Cache layer for LLM results(optional)
-Optional IBM Granite/OpenAI-based LLM alternative
-Webhook/Slack/Email integration for proactive alerts
-History tracking / conversational context
-Optional UI frontend (React)
-Interactive Speech to Text AI BOT.
-
-
-
-
-Steps:
-
-#Install local llama with model version 3.2 ,
-
-make sure it is running on http://localhost:11434/
- ollama list   
-
-#MCP server 
-#go to terraform-mcp/server
-#go run main.go 
-MCP server is running 9090 and HTTPServer connecting to local Llama is on 8081
-
-
-for MCP client
-go run client/main.g
-
-
-to geenrate the llama reponse connectd to MCP server
+✅ Functional and tested APIs
+✅ Integration with Hugging Face API for text summarization
+**Planned Enhancements**
+REST endpoints (/ask-llama, /summarize/:version)
+Optional caching layer for LLM responses
+Support for additional LLMs (IBM Granite, OpenAI)
+Webhook / Slack / Email integrations for proactive alerts
+Conversation history and context tracking
+Optional React-based UI
+Speech-to-text AI assistant
+**Setup Instructions**
+1. Install and Run Local LLaMA
+Install LLaMA (e.g., version 3.2 via Ollama)
+Ensure it is running at: http://localhost:11434
+ollama list
+2. Start MCP Server
+cd terraform-mcp/server
+go run main.go
+gRPC Server → localhost:9090
+HTTP Server (LLaMA integration) → localhost:8081
+3. Run MCP Client
+go run client/main.go
+4. Generate LLaMA Response via MCP Server
 curl -X POST http://localhost:8081/ask-llama \
   -H "Content-Type: application/json" \
-  -d '{"prompt": "what is ther in Terraform  Version: v202405-1"}'
-
+  -d '{"prompt": "What is included in Terraform version v202405-1?"}'
+**Summary**
+TerraAI brings together Terraform automation + MCP architecture + LLM intelligence to create a scalable, extensible platform for modern DevOps workflows.
 
 
 
